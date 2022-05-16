@@ -1,20 +1,31 @@
 import React from "react"
-import Info from "./components/InfoSP"
-import About from "./components/AboutSP"
-import Interest from "./components/InterestSP"
-import Footer from "./components/FooterSP"
-import "./solop.css";
+import { useState } from "react";
+import { nanoid } from "nanoid";
+import NoteList from "./components/NoteList";
+import "./index.css";
 
 
-export default function App() {
+export default function App()  {
+  const [notes, setNotes] = useState([{
+    id: nanoid(),
+    text: "This is my first note",
+    date: "16/05/2022"
+  },
+  {
+    id: nanoid(),
+    text: "This is my second note",
+    date: "19/05/2022"
+  },
+  {
+    id: nanoid(),
+    text: "This is my third note",
+    date: "222/05/2022"
+  }
+])
+
     return (
-      <div className="card">
-        <div className='incard'>
-          <Info />
-          <About />
-          <Interest />
-          <Footer />
-        </div>
+      <div className="container">
+        <NoteList notes={notes} />
       </div>
     )
   }
