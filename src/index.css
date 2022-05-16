@@ -1,0 +1,78 @@
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #282d35;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #21222A;
+  color: white;
+}
+
+.nav > h3 {
+  color: #61dafb;
+  margin-right: auto;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.nav-items {
+  list-style: none;
+  display: flex;
+}
+
+.nav-items > li {
+  padding: 10px;
+  color: #deebf8;
+  font-weight: 600;
+}
+
+.image {
+  width: 40px;
+}
+
+.main {
+  background-color: #282d35;
+  padding: 57px 27px;
+  color: white;
+  background-image: url(./images/react-logo.png);
+  background-repeat: no-repeat;
+  background-position-x: right;
+}
+
+.main > ul> li {
+  padding-block: 20px;
+}
+
+.main > ul> li::marker {
+  font-size: 1.4rem;
+  color: #61dafb;
+}
+
+.footer {
+  width: 100%;
+  height: 25px;
+  background-color: #21222A;
+  padding-left: 20px;
+}
+
+.ftext {
+  color: #deebf8;
+}
