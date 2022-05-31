@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import ReactMde from "react-mde"
 import Showdown from "showdown"
 import "../index.css";
@@ -13,8 +13,10 @@ export default function Editor({ currentNote, updateNote }) {
         tasklists: true,
     })  
 
+    
     return (
         <section className="pane editor">
+           
             <ReactMde
                 value={currentNote.body}
                 onChange={updateNote}

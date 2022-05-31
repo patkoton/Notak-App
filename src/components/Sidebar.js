@@ -1,5 +1,7 @@
-import React from "react"
+import React, { useState } from "react"
+//import {nanoid} from "nanoid"
 import "../index.css";
+
 
 
 export default function Sidebar(props) {
@@ -23,8 +25,51 @@ export default function Sidebar(props) {
         </div>
     ))
 
+    //NEW>>>
+
+    const [clicked, setClicked] = React.useState(false)
+    
+    const [category, setCategory] = useState('')
+    const [value, setValue] = useState('')
+    //END>>>
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        setCategory(value) 
+        setClicked(false)
+    }
+
     return (
         <section className="pane sidebar">
+
+
+            <div className="sidebar--header">
+                <button 
+                    className="first-note" 
+                    onClick={() => setClicked(true)}
+                >
+                    Create new Category
+                </button>
+                {
+                clicked && (
+                    <>
+                        <form onSubmit={() => handleSubmit} style={{position: 'absolute', top: 50}}>
+                        <input placeholder="write new category" onChange={(e) => setValue(e.item.value)}/>
+                        </form>
+                    </>
+                )
+                }
+            </div>
+
+            <div>
+                <ul>
+                {
+                  value &&  <li>{category}</li>
+                }    
+                </ul>
+            </div>
+
+
             <div className="sidebar--header">
                 <h3>Notes</h3>
                 <button className="new-note" onClick={props.newNote}>+</button>
